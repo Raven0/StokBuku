@@ -1,0 +1,23 @@
+{
+    "fields": [
+        {
+            "name": "nama",
+            "type": "string"
+        },
+        {
+            "name": "alamat",
+            "type": "string"
+        },
+        {
+            "name": "kontak",
+            "type": "integer"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "stok",
+            "type": "hasMany",
+            "class": "App\\Stok"
+        }
+    ]
+}

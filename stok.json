@@ -1,0 +1,56 @@
+{
+    "fields": [
+        {
+            "name": "penerbit_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "buku_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "masuk_date",
+            "type": "date"
+        },
+        {
+            "name": "jumlah",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "penerit_id",
+            "references": "id",
+            "on": "penerbit",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "buku_id",
+            "references": "id",
+            "on": "buku",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "penerbit",
+            "type": "belongsTo",
+            "class": "App\\Penerbit"
+        },
+        {
+            "name": "buku",
+            "type": "belongsToMany",
+            "class": "App\\Buku"
+        }
+    ],
+    "validations": [
+        {
+            "field": "penerbit_id",
+            "rules": "required"
+        },
+        {
+            "field": "buku_id",
+            "rules": "required"
+        }
+    ]
+}

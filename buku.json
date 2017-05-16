@@ -1,0 +1,30 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "harga_jual",
+            "type": "integer"
+        }
+        ,
+        {
+            "name": "harga_dasar",
+            "type": "integer"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "stok",
+            "type": "belongsToMany",
+            "class": "App\\Stok"
+        }
+    ],
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required"
+        }
+    ]
+}
